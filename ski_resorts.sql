@@ -137,10 +137,11 @@ AND price != 0
 ORDER BY price ASC;
 
 -- The number of skiing resorts in Europe
--- with prices lower than the average price while displaying
--- the average price, the number of resorts whose price
--- per day is lower than the average and the total number of 
--- skiing resorts in Europe
+-- with prices lower than the average price 
+-- while also displaying the following in the output:
+-- 1. the average price 
+-- 2. the number of resorts whose price per day is LOWER than the average 
+-- 3. the total number of skiing resorts in Europe
 
 select 
 (SELECT ROUND (AVG(price), 0) 
@@ -154,10 +155,11 @@ WHERE continent = 'Europe' AND price != 0)
 and continent = 'Europe';
 
 -- The number of skiing resorts in Europe
--- with prices higher than the average price while displaying
--- the average price, the number of resorts whose price
--- per day is higher than the average price and the total number of 
--- skiing resorts in Europe
+-- with prices higher than the average price 
+-- while also displaying the following in the output:
+-- 1. the average price 
+-- 2. the number of resorts whose price per day is HIGHER than the average price 
+-- 3. total number of skiing resorts in Europe
 
 select 
 (SELECT ROUND (AVG(price), 0) 
